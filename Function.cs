@@ -1,3 +1,7 @@
+/** 2022.07.17 ë³µìŠµì™„ë£Œ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +10,9 @@ public class Function : MonoBehaviour
 {
     public string name;
 
-    // [Á¢±ÙÁ¦ÇÑÀÚ]
-    // public : ¿ÜºÎ¿¡¼­ »ç¿ëÀÌ °¡´É
-    // private : ¿ÜºÎ¿¡¼­ »ç¿ëÀÌ ºÒ°¡´É (»ı·«°¡´É)
+    // [ì ‘ê·¼ì œí•œì]
+    // public : ì™¸ë¶€ì—ì„œ ì‚¬ìš©ì´ ê°€ëŠ¥
+    // private : ì™¸ë¶€ì—ì„œ ì‚¬ìš©ì´ ë¶ˆê°€ëŠ¥ (ìƒëµê°€ëŠ¥)
 
     // Start is called before the first frame update
     void Start()
@@ -27,21 +31,21 @@ public class Function : MonoBehaviour
 
         //print(AgeCal(1994));
 
-        print("½ºÅ¸Æ®ÇÔ¼ö");
+        print("ìŠ¤íƒ€íŠ¸í•¨ìˆ˜");
     }
 
     void Update()
     {
-        print("¾÷µ¥ÀÌÆ®ÇÔ¼ö");
+        print("ì—…ë°ì´íŠ¸í•¨ìˆ˜");
     }
 
-    // ³ªÀÌ °è»ê ÇÔ¼ö
+    // ë‚˜ì´ ê³„ì‚° í•¨ìˆ˜
     int AgeCal(int birthYear)
     {
-        // ÇöÀç³âµµ ±¸ÇØ¼­ º¯¼ö·Î ÀúÀå
+        // í˜„ì¬ë…„ë„ êµ¬í•´ì„œ ë³€ìˆ˜ë¡œ ì €ì¥
         string nowYear = System.DateTime.Now.ToString("yyyy");
 
-        // ÇöÀç³âµµ - Ãâ»ı³âµµ ¹İÈ¯
+        // í˜„ì¬ë…„ë„ - ì¶œìƒë…„ë„ ë°˜í™˜
         return int.Parse(nowYear) - birthYear + 1;
     }
 
@@ -70,7 +74,7 @@ public class Function : MonoBehaviour
         print(x + y);
     }
 
-    // 1. ¸Å°³º¯¼ö : ÇÔ¼ö¸¦ È£ÃâÇÒ ¶§ Æ¯Á¤ °ªÀ» º¸³»ÁÖ±â À§ÇØ
-    // 2. ¹İÈ¯°ª : ÇÔ¼öÀÇ °á°ú°ªÀ» ¹Ş¾Æ¿À±â À§ÇØ
-    // 3. out, ref : ¹İ´ë·Î(ºÎ¸£´Â »ç¶÷ÇÑÅ× º¸³»´Â °ª = ¹İÈ¯°ª)
+    // 1. ë§¤ê°œë³€ìˆ˜ : í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•  ë•Œ íŠ¹ì • ê°’ì„ ë³´ë‚´ì£¼ê¸° ìœ„í•´
+    // 2. ë°˜í™˜ê°’ : í•¨ìˆ˜ì˜ ê²°ê³¼ê°’ì„ ë°›ì•„ì˜¤ê¸° ìœ„í•´
+    // 3. out, ref : ë°˜ëŒ€ë¡œ(ë¶€ë¥´ëŠ” ì‚¬ëŒí•œí…Œ ë³´ë‚´ëŠ” ê°’ = ë°˜í™˜ê°’)
 }
