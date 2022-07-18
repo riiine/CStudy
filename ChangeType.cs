@@ -1,3 +1,7 @@
+/** 2022.07.17 ë³µìŠµì™„ë£Œ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,36 +11,36 @@ public class ChangeType : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // ÇÃ·Ô > ÀÎÆ®
+        // í”Œë¡¯ > ì¸íŠ¸
         float numF = 1.5f;
         int numI = (int)numF;
         print(numI);
 
-        // ÀÎÆ® > ÇÃ·Ô (¼Õ½ÇÀÌ ¾ø¾î¼­ ¾Ï½ÃÀûÀ¸·Î º¯È¯ °¡´É)
+        // ì¸íŠ¸ > í”Œë¡¯ (ì†ì‹¤ì´ ì—†ì–´ì„œ ì•”ì‹œì ìœ¼ë¡œ ë³€í™˜ ê°€ëŠ¥)
         numF = (float)numI;
         print(numF);
 
-        // ÇÃ·Ô > ¹®ÀÚ¿­
+        // í”Œë¡¯ > ë¬¸ìì—´
         string numS = numF.ToString();
         print(numS);
 
-        // ÀÎÆ® > ¹®ÀÚ¿­
+        // ì¸íŠ¸ > ë¬¸ìì—´
         numS = numI.ToString();
 
-        // ¹®ÀÚ¿­ > ÇÃ·Ô,ÀÎÆ®
+        // ë¬¸ìì—´ > í”Œë¡¯,ì¸íŠ¸
         numF = float.Parse(numS);
         numI = int.Parse(numS);
 
-        // ¹®ÀÚ¿­ > ºÒ
+        // ë¬¸ìì—´ > ë¶ˆ
         numS = "true";
         bool boolS = bool.Parse(numS);
         print(boolS);
 
-        // ºÒ > ¹®ÀÚ¿­
+        // ë¶ˆ > ë¬¸ìì—´
         numS = boolS.ToString();
         print(numS);
 
-        //boolS = bool.Parse(numI); : ºÒ°¡´É
+        //boolS = bool.Parse(numI); : ë¶ˆê°€ëŠ¥
     }
 
     // Update is called once per frame
