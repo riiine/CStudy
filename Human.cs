@@ -1,14 +1,18 @@
+/** 2022.07.17 ë³µìŠµì™„ë£Œ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; // ³×ÀÓ ½ºÆäÀÌ½º
+using UnityEngine; // ë„¤ì„ ìŠ¤í˜ì´ìŠ¤
 
 public class Human : MonoBehaviour
 {
-    // ¼Ó¼º : ÀÌ¸§, ¸ö¹«°Ô (¸í»ç) - º¯¼ö
+    // ì†ì„± : ì´ë¦„, ëª¸ë¬´ê²Œ (ëª…ì‚¬) - ë³€ìˆ˜
     public string name;
     public float weight;
 
-    // ±â´É : ´Ş¸®±â, ¹ä¸Ô±â (µ¿»ç) - ÇÔ¼ö
+    // ê¸°ëŠ¥ : ë‹¬ë¦¬ê¸°, ë°¥ë¨¹ê¸° (ë™ì‚¬) - í•¨ìˆ˜
     void Run()
     {
 
@@ -16,6 +20,6 @@ public class Human : MonoBehaviour
 
     void Eat()
     {
-        // weight Áõ°¡
+        // weight ì¦ê°€
     }
 }
