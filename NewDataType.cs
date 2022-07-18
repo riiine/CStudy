@@ -1,10 +1,14 @@
+/** 2022.07.17 ë³µìŠµì™„ë£Œ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NewDataType : MonoBehaviour
 {
-    enum Week // ¿ì¸®°¡ »õ·Î ¸¸µç ÀÏÁÖÀÏÀ» ³ªÅ¸³¾ ÀÚ·áÇü (¿­°ÅÇü)
+    enum Week // ìš°ë¦¬ê°€ ìƒˆë¡œ ë§Œë“  ì¼ì£¼ì¼ì„ ë‚˜íƒ€ë‚¼ ìë£Œí˜• (ì—´ê±°í˜•)
     {
         Mon,
         Tue,
@@ -15,10 +19,10 @@ public class NewDataType : MonoBehaviour
         Sun
     }
 
-    // »õ·Î ¸¸µç ÀÚ·áÇüÀ¸·Î ¸¸µç º¯¼ö
+    // ìƒˆë¡œ ë§Œë“  ìë£Œí˜•ìœ¼ë¡œ ë§Œë“  ë³€ìˆ˜
     Week week = Week.Mon;
 
-    enum State // Ä³¸¯ÅÍÀÇ »óÅÂ
+    enum State // ìºë¦­í„°ì˜ ìƒíƒœ
     {
         Idle,
         Walk,
