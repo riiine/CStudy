@@ -1,30 +1,34 @@
+/** 2022.07.17 ë³µìŠµì™„ë£Œ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DataType : MonoBehaviour
 {
-    // ÇÊµå
-    float speed; // º¯¼ö ¼±¾ð
+    // í•„ë“œ
+    float speed; // ë³€ìˆ˜ ì„ ì–¸
 
-    string myName = "¼®À±°æ";
+    string myName = "ì„ìœ¤ê²½";
 
     // Start is called before the first frame update
     void Start()
     {
-        print(48 % 2); // Á¤¼ö 0 1 2 100 -4 (int)
+        print(48 % 2); // ì •ìˆ˜ 0 1 2 100 -4 (int)
 
-        print(1 / 10.0f); // ½Ç¼ö (float)
+        print(1 / 10.0f); // ì‹¤ìˆ˜ (float)
 
-        print('¾È'); // ¹®ÀÚ (char)
+        print('ì•ˆ'); // ë¬¸ìž (char)
 
-        print("¾È³ç" + "ÇÏ¼¼¿ä" + (3 + 3)); // ¹®ÀÚ¿­ (string) : µ¡¼À>ÀÌ¾îºÙÀÌ±â
+        print("ì•ˆë…•" + "í•˜ì„¸ìš”" + (3 + 3)); // ë¬¸ìžì—´ (string) : ë§ì…ˆ>ì´ì–´ë¶™ì´ê¸°
 
-        print(!(1 < 3)); // ºÒ (bool) : Âü(true)°ú °ÅÁþ(false)
+        print(!(1 < 3)); // ë¶ˆ (bool) : ì°¸(true)ê³¼ ê±°ì§“(false)
 
-        speed = 0; // ÇÒ´ç
+        speed = 0; // í• ë‹¹
 
-        int hp = 100; // º¯¼ö ¼±¾ð + ÇÒ´ç
+        int hp = 100; // ë³€ìˆ˜ ì„ ì–¸ + í• ë‹¹
 
         speed = 10;
 
@@ -33,15 +37,15 @@ public class DataType : MonoBehaviour
         int S2peed2 = 1;
 
         /*
-        [½Äº°ÀÚ Á¤ÇÒ ¶§ ±ÔÄ¢]
-        1. Å°¿öµå´Â »ç¿ëÇÒ ¼ö ¾øÀ½ (Å°¿öµå : ÀÌ¹Ì ÀÇ¹Ì¸¦ °®°í ÀÖ´Â ´Ü¾î)
-        2. °ø¹é,Æ¯¼ö¹®ÀÚ »ç¿ë ºÒ°¡ (´Ü, ¾ð´õ¹Ù(_)´Â »ç¿ë °¡´É)
-        3. ¼ýÀÚ·Î ½ÃÀÛÇÏ¸é ¾È µÊ
+        [ì‹ë³„ìž ì •í•  ë•Œ ê·œì¹™]
+        1. í‚¤ì›Œë“œëŠ” ì‚¬ìš©í•  ìˆ˜ ì—†ìŒ (í‚¤ì›Œë“œ : ì´ë¯¸ ì˜ë¯¸ë¥¼ ê°–ê³  ìžˆëŠ” ë‹¨ì–´)
+        2. ê³µë°±,íŠ¹ìˆ˜ë¬¸ìž ì‚¬ìš© ë¶ˆê°€ (ë‹¨, ì–¸ë”ë°”(_)ëŠ” ì‚¬ìš© ê°€ëŠ¥)
+        3. ìˆ«ìžë¡œ ì‹œìž‘í•˜ë©´ ì•ˆ ë¨
 
-        [°³¹ßÀÚµé³¢¸®ÀÇ ¾à¼Ó]
-        1. º¯¼ö´Â ¼Ò¹®ÀÚ·Î ½ÃÀÛ, ÇÔ¼ö/Å¬·¡½º´Â ´ë¹®ÀÚ·Î ½ÃÀÛ
-        2. ÀÇ¹Ì¾ø´Â ´Ü¾î ¸»°í, ÃßÃø °¡´ÉÇÑ ÀÇ¹ÌÀÖ´Â ÀÌ¸§
-        3. ¿©·¯´Ü¾î·Î ÀÌ·ç¾îÁø °æ¿ì, °¢ ´Ü¾îÀÇ Ã¹±ÛÀÚ¸¦ ´ë¹®ÀÚ·Î ÇÑ´Ù
+        [ê°œë°œìžë“¤ë¼ë¦¬ì˜ ì•½ì†]
+        1. ë³€ìˆ˜ëŠ” ì†Œë¬¸ìžë¡œ ì‹œìž‘, í•¨ìˆ˜/í´ëž˜ìŠ¤ëŠ” ëŒ€ë¬¸ìžë¡œ ì‹œìž‘
+        2. ì˜ë¯¸ì—†ëŠ” ë‹¨ì–´ ë§ê³ , ì¶”ì¸¡ ê°€ëŠ¥í•œ ì˜ë¯¸ìžˆëŠ” ì´ë¦„
+        3. ì—¬ëŸ¬ë‹¨ì–´ë¡œ ì´ë£¨ì–´ì§„ ê²½ìš°, ê° ë‹¨ì–´ì˜ ì²«ê¸€ìžë¥¼ ëŒ€ë¬¸ìžë¡œ í•œë‹¤
          */
 
         int a = 10;
@@ -49,23 +53,23 @@ public class DataType : MonoBehaviour
 
         print("a + b");
 
-        // º¹ÇÕ ´ëÀÔ ¿¬»êÀÚ
+        // ë³µí•© ëŒ€ìž… ì—°ì‚°ìž
         a += 5;
         a -= 3;
         a *= 10;
         a /= 2;
         print(a);
 
-        string c = "¾È³ç";
-        c += "ÇÏ¼¼¿ä";
+        string c = "ì•ˆë…•";
+        c += "í•˜ì„¸ìš”";
         print(c);
 
-        // Áõ°¨ ¿¬»êÀÚ
+        // ì¦ê° ì—°ì‚°ìž
         int d = 10;
-        print(d++); // ÈÄÀ§ : ´ÙÀ½ ÁÙ·Î ³Ñ¾î°¥ ¶§ Àû¿ë
+        print(d++); // í›„ìœ„ : ë‹¤ìŒ ì¤„ë¡œ ë„˜ì–´ê°ˆ ë•Œ ì ìš©
         print(d--);
 
-        print(++d); // ÀüÀ§ : ÀÌ¹ø ÁÙ¿¡¼­ ¹Ù·Î Àû¿ë
+        print(++d); // ì „ìœ„ : ì´ë²ˆ ì¤„ì—ì„œ ë°”ë¡œ ì ìš©
         print(--d);
 
         // 10
