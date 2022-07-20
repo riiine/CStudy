@@ -1,105 +1,109 @@
+/** ê°•ì‚¬ë‹˜ ë‹µ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RockScissorPaper_Solution : MonoBehaviour
 {
-    // 2-1. ÇÃ·¹ÀÌ¾î°¡ ¼±ÅÃ
+    // 2-1. í”Œë ˆì´ì–´ê°€ ì„ íƒ
     public string myChoice;
 
-    // 2-2. ÄÄÇ»ÅÍ°¡ ¼±ÅÃ
+    // 2-2. ì»´í“¨í„°ê°€ ì„ íƒ
     string comChoice;
 
-    // 2-5. °¢ ÆÇÀÇ °á°ú
+    // 2-5. ê° íŒì˜ ê²°ê³¼
     string result;
 
-    // 2-7. ½ºÄÚ¾î
+    // 2-7. ìŠ¤ì½”ì–´
     int myScore, comScore;
 
-    // 3-1. °ÔÀÓ È½¼ö
+    // 3-1. ê²Œì„ íšŸìˆ˜
     int gameCount;
 
     // Start is called before the first frame update
     void Start()
     {
-        // 1. ½ÃÀÛ ¸àÆ®
-        print("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+        // 1. ì‹œì‘ ë©˜íŠ¸
+        print("ê°€ìœ„, ë°”ìœ„, ë³´ ì¤‘ í•˜ë‚˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
     }
 
     // Update is called once per frame
     void Update()
     {
-        // 3-4. °ÔÀÓÀ» 5ÆÇ Çß´Ù¸é ´õ ÀÌ»ó ÁøÇà X
+        // 3-4. ê²Œì„ì„ 5íŒ í–ˆë‹¤ë©´ ë” ì´ìƒ ì§„í–‰ X
         if(gameCount >= 5)
         {
             return;
         }
 
-        // 2-3. ¿£ÅÍÅ°¸¦ ´©¸£¸é
+        // 2-3. ì—”í„°í‚¤ë¥¼ ëˆ„ë¥´ë©´
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            // 2-4. ÄÄÇ»ÅÍµµ ¼Â Áß ÇÏ³ª ¼±ÅÃ
+            // 2-4. ì»´í“¨í„°ë„ ì…‹ ì¤‘ í•˜ë‚˜ ì„ íƒ
             int rand = Random.Range(0, 3);
             switch(rand)
             {
-                case 0: comChoice = "°¡À§"; break;
-                case 1: comChoice = "¹ÙÀ§"; break;
-                case 2: comChoice = "º¸"; break;
+                case 0: comChoice = "ê°€ìœ„"; break;
+                case 1: comChoice = "ë°”ìœ„"; break;
+                case 2: comChoice = "ë³´"; break;
             }
 
-            // 2-6. ³»°¡ ³½ °Í°ú ÄÄÇ»ÅÍ°¡ ³½ °Í¿¡ µû¶ó °á°ú ´Ù¸£°Ô
+            // 2-6. ë‚´ê°€ ë‚¸ ê²ƒê³¼ ì»´í“¨í„°ê°€ ë‚¸ ê²ƒì— ë”°ë¼ ê²°ê³¼ ë‹¤ë¥´ê²Œ
             switch(myChoice)
             {
-                case "°¡À§": 
+                case "ê°€ìœ„": 
                     switch(comChoice)
                     {
-                        case "°¡À§":  result = "¹«½ÂºÎ"; break;
-                        case "¹ÙÀ§": result = "ÄÄÇ»ÅÍ ½Â"; comScore++; break;
-                        case "º¸": result = "ÇÃ·¹ÀÌ¾î ½Â"; myScore++;  break;
+                        case "ê°€ìœ„":  result = "ë¬´ìŠ¹ë¶€"; break;
+                        case "ë°”ìœ„": result = "ì»´í“¨í„° ìŠ¹"; comScore++; break;
+                        case "ë³´": result = "í”Œë ˆì´ì–´ ìŠ¹"; myScore++;  break;
                     }
                     break;
 
-                case "¹ÙÀ§":
+                case "ë°”ìœ„":
                     switch (comChoice)
                     {
-                        case "°¡À§": result = "ÇÃ·¹ÀÌ¾î ½Â"; myScore++; break;
-                        case "¹ÙÀ§": result = "¹«½ÂºÎ"; break;
-                        case "º¸": result = "ÄÄÇ»ÅÍ ½Â"; comScore++; break;
+                        case "ê°€ìœ„": result = "í”Œë ˆì´ì–´ ìŠ¹"; myScore++; break;
+                        case "ë°”ìœ„": result = "ë¬´ìŠ¹ë¶€"; break;
+                        case "ë³´": result = "ì»´í“¨í„° ìŠ¹"; comScore++; break;
                     }
                     break;
 
-                case "º¸":
+                case "ë³´":
                     switch (comChoice)
                     {
-                        case "°¡À§": result = "ÄÄÇ»ÅÍ ½Â"; comScore++; break;
-                        case "¹ÙÀ§": result = "ÇÃ·¹ÀÌ¾î"; myScore++; break;
-                        case "º¸": result = "¹«½ÂºÎ"; break;
+                        case "ê°€ìœ„": result = "ì»´í“¨í„° ìŠ¹"; comScore++; break;
+                        case "ë°”ìœ„": result = "í”Œë ˆì´ì–´"; myScore++; break;
+                        case "ë³´": result = "ë¬´ìŠ¹ë¶€"; break;
                     }
                     break;
             }
 
-            // 2-8. ÇÑ ÆÇ´ç °á°ú ÇÑ ÁÙ Ãâ·Â
-            print($"ÇÃ·¹ÀÌ¾î : {myChoice}, ÄÄÇ»ÅÍ : {comChoice}" +
-                $" {result}, ½ºÄÚ¾î(ÇÃ·¹ÀÌ¾î:ÄÄÇ»ÅÍ) {myScore} : {comScore}");
+            // 2-8. í•œ íŒë‹¹ ê²°ê³¼ í•œ ì¤„ ì¶œë ¥
+            print($"í”Œë ˆì´ì–´ : {myChoice}, ì»´í“¨í„° : {comChoice}" +
+                $" {result}, ìŠ¤ì½”ì–´(í”Œë ˆì´ì–´:ì»´í“¨í„°) {myScore} : {comScore}");
 
-            // 3-2. °ÔÀÓ È½¼ö Áõ°¡
+            // 3-2. ê²Œì„ íšŸìˆ˜ ì¦ê°€
             gameCount++;
 
-            // 3-3. °ÔÀÓÀ» 5ÆÇ Çß´Ù¸é
+            // 3-3. ê²Œì„ì„ 5íŒ í–ˆë‹¤ë©´
             if (gameCount == 5)
             {
-                // 3-5. ½ºÄÚ¾î¿¡ µû¶ó ÃÖÁ¾ °á°ú ÇÑ ÁÙ·Î Ãâ·Â
+                // 3-5. ìŠ¤ì½”ì–´ì— ë”°ë¼ ìµœì¢… ê²°ê³¼ í•œ ì¤„ë¡œ ì¶œë ¥
                 if(myScore > comScore)
                 {
-                    print($"°ÔÀÓ ³¡! ÇÃ·¹ÀÌ¾î : ÄÄÇ»ÅÍ = {myScore} : {comScore}, ÇÃ·¹ÀÌ¾î ½Â");
+                    print($"ê²Œì„ ë! í”Œë ˆì´ì–´ : ì»´í“¨í„° = {myScore} : {comScore}, í”Œë ˆì´ì–´ ìŠ¹");
                 }
                 else if(myScore < comScore)
                 {
-                    print($"°ÔÀÓ ³¡! ÇÃ·¹ÀÌ¾î : ÄÄÇ»ÅÍ = {myScore} : {comScore}, ÄÄÇ»ÅÍ ½Â");
+                    print($"ê²Œì„ ë! í”Œë ˆì´ì–´ : ì»´í“¨í„° = {myScore} : {comScore}, ì»´í“¨í„° ìŠ¹");
                 }
                 else
                 {
-                    print($"°ÔÀÓ ³¡! ÇÃ·¹ÀÌ¾î : ÄÄÇ»ÅÍ = {myScore} : {comScore}, ¹«½ÂºÎ");
+                    print($"ê²Œì„ ë! í”Œë ˆì´ì–´ : ì»´í“¨í„° = {myScore} : {comScore}, ë¬´ìŠ¹ë¶€");
                 }
             }
         }
