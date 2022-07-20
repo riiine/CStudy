@@ -1,32 +1,36 @@
+/** ë‚´ê°€ í‘¼ ë‹µ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RockScissorPaper : MonoBehaviour
 {
-    public string m_UserSelect; // »ç¿ëÀÚ ¼±ÅÃ
-    public string m_ComSelect; // ÄÄÇ»ÅÍ ¼±ÅÃ
-    int m_UserScore = 0; // »ç¿ëÀÚÀÇ ½ºÄÚ¾î ÀúÀå
-    int m_ComScore = 0; // ÄÄÇ»ÅÍÀÇ ½ºÄÚ¾î ÀúÀå
+    public string m_UserSelect; // ì‚¬ìš©ìž ì„ íƒ
+    public string m_ComSelect; // ì»´í“¨í„° ì„ íƒ
+    int m_UserScore = 0; // ì‚¬ìš©ìžì˜ ìŠ¤ì½”ì–´ ì €ìž¥
+    int m_ComScore = 0; // ì»´í“¨í„°ì˜ ìŠ¤ì½”ì–´ ì €ìž¥
 
-    int gameCount = 0; // °ÔÀÓ ÁøÇà È½¼ö
+    int gameCount = 0; // ê²Œìž„ ì§„í–‰ íšŸìˆ˜
 
-    string result = ""; // °á°ú
+    string result = ""; // ê²°ê³¼
 
-    public bool isEnd; // °ÔÀÓÁ¾·á ÆÇ´Ü
+    public bool isEnd; // ê²Œìž„ì¢…ë£Œ íŒë‹¨
 
     // Start is called before the first frame update
     void Start()
     {
-        // ½ÃÀÛÇÏÀÚ¸¶ÀÚ "°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä" Ãâ·Â
-        // ÀÎ½ºÆåÅÍ Ã¢¿¡¼­ º¸ÀÌ´Â º¯¼ö(m_UserSelect)¿¡ °¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·Â
-        print("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+        // ì‹œìž‘í•˜ìžë§ˆìž "ê°€ìœ„, ë°”ìœ„, ë³´ ì¤‘ í•˜ë‚˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”" ì¶œë ¥
+        // ì¸ìŠ¤íŽ™í„° ì°½ì—ì„œ ë³´ì´ëŠ” ë³€ìˆ˜(m_UserSelect)ì— ê°€ìœ„, ë°”ìœ„, ë³´ ì¤‘ í•˜ë‚˜ë¥¼ ìž…ë ¥
+        print("ê°€ìœ„, ë°”ìœ„, ë³´ ì¤‘ í•˜ë‚˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
     }
 
     // Update is called once per frame
     void Update()
     {
-        // °ÔÀÓÀÌ Á¾·áµÆ´Ù¸é
+        // ê²Œìž„ì´ ì¢…ë£Œëë‹¤ë©´
         if (isEnd)
         {
             return;
@@ -36,99 +40,99 @@ public class RockScissorPaper : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                // 0 : °¡À§, 1 : ¹ÙÀ§, 2 : º¸
-                // ¿£ÅÍÅ°¸¦ ´©¸£¸é ÄÄÇ»ÅÍµµ °¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ·£´ýÀ¸·Î ¼±ÅÃ
+                // 0 : ê°€ìœ„, 1 : ë°”ìœ„, 2 : ë³´
+                // ì—”í„°í‚¤ë¥¼ ëˆ„ë¥´ë©´ ì»´í“¨í„°ë„ ê°€ìœ„, ë°”ìœ„, ë³´ ì¤‘ í•˜ë‚˜ë¥¼ ëžœë¤ìœ¼ë¡œ ì„ íƒ
                 int random = Random.Range(0, 3);
 
                 if (random == 0)
                 {
-                    m_ComSelect = "°¡À§";
+                    m_ComSelect = "ê°€ìœ„";
 
-                    if (m_UserSelect == "°¡À§") // ¹«½ÂºÎ
+                    if (m_UserSelect == "ê°€ìœ„") // ë¬´ìŠ¹ë¶€
                     {
                         gameCount++;
-                        print($"³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : ¹«½ÂºÎ, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+                        print($"ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : ë¬´ìŠ¹ë¶€, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
                     }
-                    if (m_UserSelect == "¹ÙÀ§")
+                    if (m_UserSelect == "ë°”ìœ„")
                     {
                         gameCount++;
-                        m_UserScore++; // À¯Àú°¡ ÀÌ°åÀ¸¹Ç·Î À¯Àú ½ºÄÚ¾î Áõ°¡
-                        print($"³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : À¯Àú ½Â¸®, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+                        m_UserScore++; // ìœ ì €ê°€ ì´ê²¼ìœ¼ë¯€ë¡œ ìœ ì € ìŠ¤ì½”ì–´ ì¦ê°€
+                        print($"ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : ìœ ì € ìŠ¹ë¦¬, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
                     }
-                    if (m_UserSelect == "º¸")
+                    if (m_UserSelect == "ë³´")
                     {
                         gameCount++;
-                        m_ComScore++; // ÄÄÇ»ÅÍ°¡ ÀÌ°åÀ¸¹Ç·Î ÄÄÇ»ÅÍ ½ºÄÚ¾î Áõ°¡
-                        print($"³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : ÄÄÇ»ÅÍ ½Â¸®, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+                        m_ComScore++; // ì»´í“¨í„°ê°€ ì´ê²¼ìœ¼ë¯€ë¡œ ì»´í“¨í„° ìŠ¤ì½”ì–´ ì¦ê°€
+                        print($"ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : ì»´í“¨í„° ìŠ¹ë¦¬, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
                     }
                 }
                 if (random == 1)
                 {
-                    m_ComSelect = "¹ÙÀ§";
+                    m_ComSelect = "ë°”ìœ„";
 
-                    if (m_UserSelect == "°¡À§")
+                    if (m_UserSelect == "ê°€ìœ„")
                     {
                         gameCount++;
-                        m_UserScore++; // À¯Àú°¡ ÀÌ°åÀ¸¹Ç·Î À¯Àú ½ºÄÚ¾î Áõ°¡
-                        print($"³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : À¯Àú ½Â¸®, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+                        m_UserScore++; // ìœ ì €ê°€ ì´ê²¼ìœ¼ë¯€ë¡œ ìœ ì € ìŠ¤ì½”ì–´ ì¦ê°€
+                        print($"ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : ìœ ì € ìŠ¹ë¦¬, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
                     }
-                    if (m_UserSelect == "¹ÙÀ§") // ¹«½ÂºÎ
+                    if (m_UserSelect == "ë°”ìœ„") // ë¬´ìŠ¹ë¶€
                     {
                         gameCount++;
-                        print($"³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : ¹«½ÂºÎ, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+                        print($"ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : ë¬´ìŠ¹ë¶€, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
                     }
-                    if (m_UserSelect == "º¸")
+                    if (m_UserSelect == "ë³´")
                     {
                         gameCount++;
-                        m_ComScore++; // ÄÄÇ»ÅÍ°¡ ÀÌ°åÀ¸¹Ç·Î ÄÄÇ»ÅÍ ½ºÄÚ¾î Áõ°¡
-                        print($"³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : ÄÄÇ»ÅÍ ½Â¸®, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+                        m_ComScore++; // ì»´í“¨í„°ê°€ ì´ê²¼ìœ¼ë¯€ë¡œ ì»´í“¨í„° ìŠ¤ì½”ì–´ ì¦ê°€
+                        print($"ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : ì»´í“¨í„° ìŠ¹ë¦¬, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
                     }
                 }
                 if (random == 2)
                 {
-                    m_ComSelect = "º¸";
+                    m_ComSelect = "ë³´";
 
-                    if (m_UserSelect == "°¡À§")
+                    if (m_UserSelect == "ê°€ìœ„")
                     {
                         gameCount++;
-                        m_UserScore++; // À¯Àú°¡ ÀÌ°åÀ¸¹Ç·Î À¯Àú ½ºÄÚ¾î Áõ°¡
-                        print($"³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : À¯Àú ½Â¸®, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+                        m_UserScore++; // ìœ ì €ê°€ ì´ê²¼ìœ¼ë¯€ë¡œ ìœ ì € ìŠ¤ì½”ì–´ ì¦ê°€
+                        print($"ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : ìœ ì € ìŠ¹ë¦¬, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
                     }
-                    if (m_UserSelect == "¹ÙÀ§")
+                    if (m_UserSelect == "ë°”ìœ„")
                     {
                         gameCount++;
-                        m_ComScore++; // ÄÄÇ»ÅÍ°¡ ÀÌ°åÀ¸¹Ç·Î ÄÄÇ»ÅÍ ½ºÄÚ¾î Áõ°¡
-                        print($"³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : ÄÄÇ»ÅÍ ½Â¸®, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+                        m_ComScore++; // ì»´í“¨í„°ê°€ ì´ê²¼ìœ¼ë¯€ë¡œ ì»´í“¨í„° ìŠ¤ì½”ì–´ ì¦ê°€
+                        print($"ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : ì»´í“¨í„° ìŠ¹ë¦¬, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
                     }
-                    if (m_UserSelect == "º¸") // ¹«½ÂºÎ
+                    if (m_UserSelect == "ë³´") // ë¬´ìŠ¹ë¶€
                     {
                         gameCount++;
-                        print($"³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : ¹«½ÂºÎ, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+                        print($"ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : ë¬´ìŠ¹ë¶€, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
                     }
                 }
 
             }
         }
 
-        if (gameCount == 5) // 5ÆÇÀÌ ÁøÇàµÇ¸é
+        if (gameCount == 5) // 5íŒì´ ì§„í–‰ë˜ë©´
         {
-            // °ÔÀÓ Á¾·á
+            // ê²Œìž„ ì¢…ë£Œ
             isEnd = true;
 
             if (m_UserScore > m_ComScore) 
             {
-                result = "À¯Àú ½Â¸®";
+                result = "ìœ ì € ìŠ¹ë¦¬";
             }
             if (m_UserScore < m_ComScore)
             {
-                result = "ÄÄÇ»ÅÍ ½Â¸®";
+                result = "ì»´í“¨í„° ìŠ¹ë¦¬";
             }
             if (m_UserScore == m_ComScore)
             {
-                result = "¹«½ÂºÎ";
+                result = "ë¬´ìŠ¹ë¶€";
             }
 
-            print($"°ÔÀÓÁ¾·á!! ³ª : {m_UserSelect} ,ÄÄÇ»ÅÍ : {m_ComSelect}, °á°ú : {result}, ÇöÀç ½ºÄÚ¾î : {m_UserScore} : {m_ComScore}");
+            print($"ê²Œìž„ì¢…ë£Œ!! ë‚˜ : {m_UserSelect} ,ì»´í“¨í„° : {m_ComSelect}, ê²°ê³¼ : {result}, í˜„ìž¬ ìŠ¤ì½”ì–´ : {m_UserScore} : {m_ComScore}");
         }
 
     }
