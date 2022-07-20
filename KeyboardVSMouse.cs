@@ -1,19 +1,23 @@
+/** 2022.07.20 ë³µìŠµì™„ë£Œ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class KeyboardVSMouse : MonoBehaviour
 {
-    // ¸¶¿ì½º Å¬¸¯ È½¼ö
+    // ë§ˆìš°ìŠ¤ í´ë¦­ íšŸìˆ˜
     public int mouseCount;
 
-    // Å°º¸µå Å¬¸¯ È½¼ö
+    // í‚¤ë³´ë“œ í´ë¦­ íšŸìˆ˜
     public int keyboardCount = 0;
 
-    // °á°ú ÀúÀåÇÒ º¯¼ö
+    // ê²°ê³¼ ì €ì¥í•  ë³€ìˆ˜
     string result = "";
 
-    // °ÔÀÓÀÌ ³¡³µ´ÂÁö
+    // ê²Œì„ì´ ëë‚¬ëŠ”ì§€
     public bool isEnd;
 
     // Start is called before the first frame update
@@ -25,66 +29,66 @@ public class KeyboardVSMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 0 : ÁÂÅ¬¸¯, 1 : ¿ìÅ¬¸¯, 2 : ÈÙÅ¬¸¯
+        // 0 : ì¢Œí´ë¦­, 1 : ìš°í´ë¦­, 2 : íœ í´ë¦­
 
-        //// ÁÂÅ¬¸¯À» ÇÏ°í ÀÖ´Â Áß
+        //// ì¢Œí´ë¦­ì„ í•˜ê³  ìˆëŠ” ì¤‘
         //if (Input.GetMouseButton(0))
         //{
-        //    print("ÁÂÅ¬¸¯ ÇÏ´Â Áß");
+        //    print("ì¢Œí´ë¦­ í•˜ëŠ” ì¤‘");
         //}
 
-        //// ÁÂÅ¬¸¯ ¶ÃÀ» ¶§
+        //// ì¢Œí´ë¦­ ë—ì„ ë•Œ
         //if (Input.GetMouseButtonUp(2))
         //{
-        //    print("ÁÂÅ¬¸¯ ¶ÃÀ» ¶§");
+        //    print("ì¢Œí´ë¦­ ë—ì„ ë•Œ");
         //}
 
-        // °ÔÀÓÀÌ Á¾·áµÆ´Ù¸é
+        // ê²Œì„ì´ ì¢…ë£Œëë‹¤ë©´
         if (isEnd)
         {
             return;
         }
 
-        // ÁÂÅ¬¸¯À» ÇÑ ¼ø°£
+        // ì¢Œí´ë¦­ì„ í•œ ìˆœê°„
         if (Input.GetMouseButtonDown(0))
         {
-            // ¸¶¿ì½º Å¬¸¯ È½¼ö Áõ°¡
+            // ë§ˆìš°ìŠ¤ í´ë¦­ íšŸìˆ˜ ì¦ê°€
             mouseCount++;
         }
 
-        // ½ºÆäÀÌ¹Ù¸¦ ´©¸¥ ¼ø°£
+        // ìŠ¤í˜ì´ë°”ë¥¼ ëˆ„ë¥¸ ìˆœê°„
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Å°º¸µå ´©¸¥ È½¼ö Áõ°¡
+            // í‚¤ë³´ë“œ ëˆ„ë¥¸ íšŸìˆ˜ ì¦ê°€
             keyboardCount++;
         }
 
-        // µÑ Áß¿¡ ÇÏ³ª¶óµµ 10ÀÌ µÇ¸é
+        // ë‘˜ ì¤‘ì— í•˜ë‚˜ë¼ë„ 10ì´ ë˜ë©´
         if (mouseCount == 10 || keyboardCount == 10)
         {
-            // °ÔÀÓ Á¾·á
+            // ê²Œì„ ì¢…ë£Œ
             isEnd = true;
 
-            // ¸¶¿ì½º°¡ ÀÌ°å´Ù¸é
+            // ë§ˆìš°ìŠ¤ê°€ ì´ê²¼ë‹¤ë©´
             if (mouseCount > keyboardCount)
             {
-                result = "¸¶¿ì½º ½Â";
+                result = "ë§ˆìš°ìŠ¤ ìŠ¹";
             }
-            // Å°º¸µå°¡ ÀÌ°å´Ù¸é
+            // í‚¤ë³´ë“œê°€ ì´ê²¼ë‹¤ë©´
             else if (mouseCount < keyboardCount)
             {
-                result = "Å°º¸µå ½Â";
+                result = "í‚¤ë³´ë“œ ìŠ¹";
             }
-            // ¹«½ÂºÎ
+            // ë¬´ìŠ¹ë¶€
             else
             {
-                result = "¹«½ÂºÎ";
+                result = "ë¬´ìŠ¹ë¶€";
             }
 
-            // °ÔÀÓ Á¾·á! ¸¶¿ì½º : 0Á¡, Å°º¸µå : 0Á¡, °á°ú : ~
-            //print("°ÔÀÓ Á¾·á! ¸¶¿ì½º : " + mouseCount + "Á¡, "
-            //    + "Å°º¸µå : " + keyboardCount + "Á¡, °á°ú : " + result);
-            print($"°ÔÀÓ Á¾·á! ¸¶¿ì½º : {mouseCount}Á¡, Å°º¸µå : {keyboardCount}Á¡, °á°ú : {result}");
+            // ê²Œì„ ì¢…ë£Œ! ë§ˆìš°ìŠ¤ : 0ì , í‚¤ë³´ë“œ : 0ì , ê²°ê³¼ : ~
+            //print("ê²Œì„ ì¢…ë£Œ! ë§ˆìš°ìŠ¤ : " + mouseCount + "ì , "
+            //    + "í‚¤ë³´ë“œ : " + keyboardCount + "ì , ê²°ê³¼ : " + result);
+            print($"ê²Œì„ ì¢…ë£Œ! ë§ˆìš°ìŠ¤ : {mouseCount}ì , í‚¤ë³´ë“œ : {keyboardCount}ì , ê²°ê³¼ : {result}");
         }
     }
 }
