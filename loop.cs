@@ -1,3 +1,7 @@
+/** 2022.07.25 ë³µìŠµì™„ë£Œ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +15,7 @@ public class loop : MonoBehaviour
 
         while (count < 10)
         {
-            print("¹İº¹");
+            print("ë°˜ë³µ");
             count++;
         }
 
@@ -26,14 +30,14 @@ public class loop : MonoBehaviour
             print(i);
         }
 
-        // ¹İº¹¹®À» ÀÌ¿ëÇØ¼­ 5ºÎÅÍ 15±îÁö Ãâ·ÂÇÏ´Â ÄÚµå 
+        // ë°˜ë³µë¬¸ì„ ì´ìš©í•´ì„œ 5ë¶€í„° 15ê¹Œì§€ ì¶œë ¥í•˜ëŠ” ì½”ë“œ 
         for (int i = 5; i <= 15; i++)
         {
             print(i);
         }
 
-        // ¹İº¹¹®À» ÀÌ¿ëÇØ¼­ 1ºÎÅÍ 10±îÁö Áß¿¡¼­ Â¦¼ö¸¸ Ãâ·Â
-        // ³ª¸ÓÁö ¿¬»êÀ» »ç¿ëÇÏÁö ¾Ê°í!
+        // ë°˜ë³µë¬¸ì„ ì´ìš©í•´ì„œ 1ë¶€í„° 10ê¹Œì§€ ì¤‘ì—ì„œ ì§ìˆ˜ë§Œ ì¶œë ¥
+        // ë‚˜ë¨¸ì§€ ì—°ì‚°ì„ ì‚¬ìš©í•˜ì§€ ì•Šê³ !
         for (int i = 2; i <= 10; i+=2)
         {
             print(i);
@@ -49,7 +53,7 @@ public class loop : MonoBehaviour
         {
             for (int j=0; j<4; j++)
             {
-                print("¹İº¹");
+                print("ë°˜ë³µ");
             }
         }
 
@@ -81,9 +85,9 @@ public class loop : MonoBehaviour
             print(i);
         }
 
-        // break : Á¶°Ç¹®/¹İº¹¹®À» Å»Ãâ
-        // continue : ¹İº¹¹® ¾È¿¡¼­ ÁøÇàµÇ´ø ÄÚµå¸¦ Å»Ãâ > ´ÙÀ½ ¹İº¹
-        // return : ÇÔ¼ö¸¦ Å»Ãâ
+        // break : ì¡°ê±´ë¬¸/ë°˜ë³µë¬¸ì„ íƒˆì¶œ
+        // continue : ë°˜ë³µë¬¸ ì•ˆì—ì„œ ì§„í–‰ë˜ë˜ ì½”ë“œë¥¼ íƒˆì¶œ > ë‹¤ìŒ ë°˜ë³µ
+        // return : í•¨ìˆ˜ë¥¼ íƒˆì¶œ
     }
 
     // Update is called once per frame
