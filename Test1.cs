@@ -1,11 +1,15 @@
+/** 2022.07.25 ë³µìŠµì™„ë£Œ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 1¹ø ´ä
+// 1ë²ˆ ë‹µ
 class Car
 {
-    string color = "»¡°£»ö";
+    string color = "ë¹¨ê°„ìƒ‰";
     int wheelCount = 4;
 
     void Go()
@@ -21,7 +25,7 @@ class Car
 
 public class Test1 : MonoBehaviour
 {
-    // 3¹ø ´ä
+    // 3ë²ˆ ë‹µ
     float Circle(float radius)
     {
         return radius * 2 * 3.14f;
@@ -31,20 +35,20 @@ public class Test1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 4¹ø ´ä
+        // 4ë²ˆ ë‹µ
         if(x < 30 && x > 0 && y == 10)
         {
-            print("x¿Í y´Â Á¶°Ç¿¡ ¸¸Á·Çß½À´Ï´Ù.");
+            print("xì™€ yëŠ” ì¡°ê±´ì— ë§Œì¡±í–ˆìŠµë‹ˆë‹¤.");
         }
 
         rand = Random.Range(0, 2);
         if(rand == 0)
         {
-            print("¿ŞÂÊ");
+            print("ì™¼ìª½");
         }
         else
         {
-            print("¿À¸¥ÂÊ");
+            print("ì˜¤ë¥¸ìª½");
         }
     }
     int rand;
@@ -53,7 +57,7 @@ public class Test1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 5¹ø ´ä
+        // 5ë²ˆ ë‹µ
         if (isCan)
         {
             if (Input.GetKeyDown(KeyCode.Alpha0))
@@ -74,12 +78,12 @@ public class Test1 : MonoBehaviour
         if((Input.GetKeyDown(KeyCode.LeftArrow) && rand == 0)
             || (Input.GetKeyDown(KeyCode.RightArrow) && rand == 1))
         {
-            print("µùµ¿´ó");
+            print("ë”©ë™ëŒ•");
         }
         else if((Input.GetKeyDown(KeyCode.LeftArrow) && rand == 1)
             || (Input.GetKeyDown(KeyCode.RightArrow) && rand == 0))
         {
-            print("¶¯");
+            print("ë•¡");
         }
     }
 }
