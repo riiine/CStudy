@@ -1,39 +1,43 @@
+/** 2022.07.26 ë³µìŠµì™„ë£Œ */
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Array : MonoBehaviour
 {        
-    // Ã¹ ¹øÂ° ¹æ¹ı : °ªÀ» ³ÖÀ¸¸é¼­ °ø°£ Å©±â ¸¶·Ã
-    // ÀÎÆ® ¹è¿­ º¯¼ö
+    // ì²« ë²ˆì§¸ ë°©ë²• : ê°’ì„ ë„£ìœ¼ë©´ì„œ ê³µê°„ í¬ê¸° ë§ˆë ¨
+    // ì¸íŠ¸ ë°°ì—´ ë³€ìˆ˜
     public int[] intArray = { 1, 2, 3 };
 
     // Start is called before the first frame update
     void Start()
     {
-        // ÇÃ·Ô ¹è¿­ º¯¼ö
+        // í”Œë¡¯ ë°°ì—´ ë³€ìˆ˜
         float[] floatArray = { 0.1f, 2.3f, 5f };
 
-        // ½ºÆ®¸µ ¹è¿­ º¯¼ö
-        string[] stringArray = { "¾È³ç", "ÇÏ¼¼¿ä", "¿©·¯ºĞ" };
+        // ìŠ¤íŠ¸ë§ ë°°ì—´ ë³€ìˆ˜
+        string[] stringArray = { "ì•ˆë…•", "í•˜ì„¸ìš”", "ì—¬ëŸ¬ë¶„" };
 
-        // ºÒ ¹è¿­ º¯¼ö
+        // ë¶ˆ ë°°ì—´ ë³€ìˆ˜
         bool[] boolArray = { true, false, 1 < 2 };
 
-        // ½ºÆ®¸µ¾î·¹ÀÌ °ª ÀüºÎ Ãâ·Â (ÇÁ¸°Æ® ÄÚµå ÇÑ ¹ø¸¸ ÀÛ¼º, ¹®ÀÚ¿­ ¿¬°áx)
+        // ìŠ¤íŠ¸ë§ì–´ë ˆì´ ê°’ ì „ë¶€ ì¶œë ¥ (í”„ë¦°íŠ¸ ì½”ë“œ í•œ ë²ˆë§Œ ì‘ì„±, ë¬¸ìì—´ ì—°ê²°x)
         for (int i=0; i < stringArray.Length; i++) 
         {
             print(stringArray[i]);
         }
 
-        // ½ºÆ®¸µ¾î·¹ÀÌ °ª ÀüºÎ Ãâ·Â
+        // ìŠ¤íŠ¸ë§ì–´ë ˆì´ ê°’ ì „ë¶€ ì¶œë ¥
         foreach (var item in stringArray)
         {
             print(item); // get
             //item = "o"; // set
         }
-        // ÀåÁ¡ : ÄÃ·º¼Ç¿¡ »ç¿ëÇÏ±â ÆíÇÏ´Ù
-        // ´ÜÁ¡ : ¹İº¹ º¯¼ö´Â ÀĞ±â Àü¿ë (ÇÒ´çX)
+        // ì¥ì  : ì»¬ë ‰ì…˜ì— ì‚¬ìš©í•˜ê¸° í¸í•˜ë‹¤
+        // ë‹¨ì  : ë°˜ë³µ ë³€ìˆ˜ëŠ” ì½ê¸° ì „ìš© (í• ë‹¹X)
 
         floatArray[0] = 1.1f;
 
@@ -42,7 +46,7 @@ public class Array : MonoBehaviour
             print(item);
         }
 
-        // µÎ ¹øÂ° ¹æ¹ı : °ø°£ÀÇ Å©±â¸¸ °áÁ¤ (ÃÊ±â°ªÀÌ µé¾î°¨)
+        // ë‘ ë²ˆì§¸ ë°©ë²• : ê³µê°„ì˜ í¬ê¸°ë§Œ ê²°ì • (ì´ˆê¸°ê°’ì´ ë“¤ì–´ê°)
         int[] intArray2;
         intArray2 = new int[2];
 
@@ -51,7 +55,7 @@ public class Array : MonoBehaviour
             print(item);
         }
 
-        // 2Â÷¿ø ¹è¿­
+        // 2ì°¨ì› ë°°ì—´
         int[,] intArray3 = {
             { 1, 2, 3, 4, 5, 6},
             { 7, 8, 9, 10, 11, 12}
@@ -59,7 +63,7 @@ public class Array : MonoBehaviour
 
         print(intArray3[1, 4]);
 
-        // intArray3¿¡ ÀÖ´Â ¸ğµç °ª Ãâ·Â, foreach¹® ±İÁö
+        // intArray3ì— ìˆëŠ” ëª¨ë“  ê°’ ì¶œë ¥, foreachë¬¸ ê¸ˆì§€
         for (int i = 0; i < intArray3.GetLength(0); i++)
         {
             for (int j = 0; j < intArray3.GetLength(1); j++) 
@@ -70,7 +74,7 @@ public class Array : MonoBehaviour
 
         int[,,] intArray4 = new int[2, 4, 3];
 
-        // °¡º¯ ¹è¿­
+        // ê°€ë³€ ë°°ì—´
         int[][] intArray5 = new int[3][];
         intArray5[0] = new int[6] { 1, 2, 3, 4, 5, 6 };
         intArray5[1] = new int[3];
