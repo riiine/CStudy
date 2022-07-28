@@ -64,12 +64,13 @@ public class InGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void Button1Func() // Button1 눌렀을 때 반응 함수
     {
-        if (button1_Text.text == "#") {
+        if (button1_Text.text == "#")
+        {
             if (isComTurn == false) // 나의 차례라면
             {
                 button1_Text.text = "O";
@@ -265,13 +266,14 @@ public class InGame : MonoBehaviour
 
                 isComTurn = !isComTurn; // 턴 바꾸기
 
-                
+
             }
             Check(); // 승부를 체크하는 함수
         }
     }
 
-    void Check() {
+    void Check()
+    {
         // 가로 3줄 검사
         if (button1_Text.text != "#" && button1_Text.text == button2_Text.text && button1_Text.text == button3_Text.text)
         {
@@ -415,9 +417,22 @@ public class InGame : MonoBehaviour
             return;
         }
 
-        // 무승부
-        result_Text.text = "End....";
-        Reset();
+        // 모든 칸이 완성됐지만 승부가 안 났을 때
+        if (button1_Text.text != "#" &&
+        button2_Text.text != "#" &&
+        button3_Text.text != "#" &&
+        button4_Text.text != "#" &&
+        button5_Text.text != "#" &&
+        button6_Text.text != "#" &&
+        button7_Text.text != "#" &&
+        button8_Text.text != "#" &&
+        button9_Text.text != "#")
+        {
+            // 무승부
+            result_Text.text = "End....";
+            Reset();
+        }
+
     }
 
     void Reset()
