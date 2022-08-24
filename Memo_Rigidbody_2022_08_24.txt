@@ -1,0 +1,17 @@
+Is Trigger : true일 때, 충돌체는 존재하기 때문에 충돌을 감지할 수 있지만 뚫고 지나갈 수 있다. (외부적)
+
+Mass : 질량(무게) - 중력에 영향X (충돌에 영향O)
+Drag : 공기의 저항 - 중력에 영향O
+Angular Drag : 회전 저항
+Use Gravity : 중력의 유무
+Is Kinematic : true일 때, 외부적인 물리X
+(코드를 이용한 물리작용 = 내부적인 물리O)
+Interpolate : 물리계산으로 인해 뚝뚝 끊겨 보이는 현상을 보정하는 속성
+Collision Detection
+Discrete : 프레임 간에 간격을 두고 충돌 감지
+(가벼운 대신 충돌을 무시하는 경우 발생)
+Continuous : 연속적으로 충돌 감지
+(충돌을 무시하는 경우를 줄이는 대신 무거움)
+Constraints : 축뱔로 위치/각도를 고정하고 싶을 때 사용
+
+캐릭터가 가만히 있는데 회전한다 => y축을 freeze하거나. 회전 저항이 약해서 그럴수도 있음
